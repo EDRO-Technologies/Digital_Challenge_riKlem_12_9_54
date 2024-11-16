@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hahatonchikk/features/ListScreen/View/List_Screen.dart';
 
 class CustomCollectSheet extends StatelessWidget {
   const CustomCollectSheet({super.key});
@@ -38,6 +39,7 @@ class CustomCollectSheet extends StatelessWidget {
                 horizontal: 20,
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Spacer(),
                   const Expanded(
@@ -57,7 +59,7 @@ class CustomCollectSheet extends StatelessWidget {
                             ),
                             TextSpan(
                               text:
-                                  'Обязательный сбор для членов профсоюза, не получающих стипендию',
+                                  '12 из 28 оплатили',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
@@ -74,40 +76,31 @@ class CustomCollectSheet extends StatelessWidget {
                     flex: 2,
                     child: InkWell(
                       onTap: () {
-                        Navigator.pop(context);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => ListScreen()));
                       },
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(15),
                       child: Material(
                         color: Colors.transparent,
                         child: Ink(
                           height: 70,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF2F3169),
+                            color: const Color(0xFF1143C0),
                             borderRadius: BorderRadius.circular(
-                              30,
+                              15,
                             ),
                           ),
-                          child: Row(
-                            children: [
-                              const Spacer(),
-                              const Expanded(
-                                child: AutoSizeText(
-                                  'Оплатить 2500₽',
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
+                          child: Center(
+                            child: const Expanded(
+                              child: AutoSizeText(
+                                'Посмотреть список',
+                                maxLines: 1,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
                                 ),
                               ),
-                              Expanded(
-                                child: Image.asset(
-                                  'assets/images/payment-method.png',
-                                  height: 30 + 20 * (size.width / 1080),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ),
                       ),

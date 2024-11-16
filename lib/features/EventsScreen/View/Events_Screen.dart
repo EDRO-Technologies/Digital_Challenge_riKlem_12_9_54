@@ -18,6 +18,7 @@ class _EventsScreenState extends State<EventsScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: CustomScrollView(
           controller: scrollController,
           slivers: [

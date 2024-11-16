@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hahatonchikk/features/CollectPage/View/Collect_Page.dart';
+import 'package:hahatonchikk/features/ListScreen/View/List_Screen.dart';
 import 'package:hahatonchikk/features/LoginScreen/View/Login_Screen.dart';
 import 'package:hahatonchikk/features/PageViewScreen/View/Page_View_Screen.dart';
 
@@ -14,8 +15,7 @@ Future<void> main() async {
           dragHandleColor: Colors.white,
         ),
       ),
-     home: PageViewScreen(),
-
+     home: LoginScreen(),
      // home: const PageViewScreen(),
     ),
   );
