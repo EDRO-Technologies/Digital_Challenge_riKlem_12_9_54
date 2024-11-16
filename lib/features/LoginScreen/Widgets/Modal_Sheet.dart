@@ -60,7 +60,12 @@ class ModalSheet extends StatelessWidget {
             flex: 2,
             child: InkWell(
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginScreen(),
+                  ),
+                );
               },
               borderRadius: BorderRadius.circular(30),
               child: Material(
@@ -76,7 +81,7 @@ class ModalSheet extends StatelessWidget {
                   ),
                   child: const Center(
                     child: AutoSizeText(
-                      'Приступим!',
+                      'Продолжить',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,

@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:hahatonchikk/featchers/MainScreen/View/Main_Screen.dart';
+import 'package:hahatonchikk/features/LoginScreen/View/Login_Screen.dart';
 
 void main() {
-  runApp(MaterialApp(home: MainScreen(),));
+  runApp(
+    MaterialApp(
+      theme: ThemeData(
+        bottomSheetTheme: const BottomSheetThemeData(
+          dragHandleSize: Size(100, 7),
+          dragHandleColor: Colors.white,
+        ),
+      ),
+      home: const LoginScreen(),
+    ),
+  );
 }
-
