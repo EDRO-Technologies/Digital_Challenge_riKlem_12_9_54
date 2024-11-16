@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,6 @@ class _LoginScreenState extends State<LoginScreen> {
       _showModalSheet();
     });
 
-
   }
 
   void _showModalSheet() {
@@ -40,6 +41,20 @@ class _LoginScreenState extends State<LoginScreen> {
   double _turns1 = 0;
   double _turns2 = 0;
 
+  void RemoveText(TextEditingController controller) {
+      List<String> charList = controller.text.split("");
+      Timer.periodic(const Duration(milliseconds: 10), (timer)
+      {
+        if (charList.length <= 0) {
+          timer.cancel();
+          return;
+        }
+        charList.removeLast();
+        controller.text = charList.join();
+        setState(() {
+        });
+      });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -110,6 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () {
                       setState(() {
                         _turns1 == 0 ? _turns1 = 360 : _turns1 = 0;
+                        RemoveText(_login);
                       });
                     },
                     child: AnimatedRotation(
@@ -150,6 +166,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () {
                       setState(() {
                         _turns2 == 0 ? _turns2 = 360 : _turns2 = 0;
+                        RemoveText(_password);
                       });
                     },
                     child: AnimatedRotation(
