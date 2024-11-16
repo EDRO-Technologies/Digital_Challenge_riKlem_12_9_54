@@ -31,7 +31,6 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               BoxShadow(
                 blurRadius: 15.4,
                 spreadRadius: 1,
-                  color: Color(0x41000000)
               )
             ],
           ),

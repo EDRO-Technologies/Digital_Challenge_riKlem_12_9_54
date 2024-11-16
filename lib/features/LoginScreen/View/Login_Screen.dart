@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hahatonchikk/features/MainScreen/View/Main_Screen.dart';
 
+import '../../PageViewScreen/View/Page_View_Screen.dart';
 import '../Widgets/Modal_Sheet.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -117,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
             TextField(
               controller: _login,
               decoration: InputDecoration(
-                labelText: "Логин",
+                labelText: "Номер телефона",
                 suffixIcon: Padding(
                   padding: const EdgeInsets.all(5),
                   child: InkWell(
@@ -158,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
             TextField(
               controller: _password,
               decoration: InputDecoration(
-                labelText: "Пароль",
+                labelText: "Код из СМС",
                 suffixIcon: Padding(
                   padding: const EdgeInsets.all(5),
                   child: InkWell(
@@ -200,32 +201,70 @@ class _LoginScreenState extends State<LoginScreen> {
               flex: 1,
               child: InkWell(
                 onTap: () {
+
+                },
+                borderRadius: BorderRadius.circular(15),
+                child: Ink(
+                  height: 70,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(
+                      15,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 12,
+                        color: Color(0xFF000000)
+                      )
+                    ],
+                  ),
+                  child: const Center(
+                    child: AutoSizeText(
+                      'Получить код',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const Flexible(
+              child: SizedBox(
+                height: 20,
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              child: InkWell(
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const MainScreen(),
+                      builder: (context) => const PageViewScreen(),
                     ),
                   );
                 },
                 borderRadius: BorderRadius.circular(30),
-                child: Material(
-                  color: Colors.transparent,
-                  child: Ink(
-                    height: 70,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF1143C0),
-                      borderRadius: BorderRadius.circular(
-                        30,
-                      ),
+                child: Ink(
+                  height: 70,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF1143C0),
+                    borderRadius: BorderRadius.circular(
+                      30,
                     ),
-                    child: const Center(
-                      child: AutoSizeText(
-                        'Войти',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
+                  ),
+                  child: const Center(
+                    child: AutoSizeText(
+                      'Войти',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),

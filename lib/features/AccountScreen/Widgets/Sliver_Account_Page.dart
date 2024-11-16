@@ -21,9 +21,9 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
         ),
         child: Column(
           children: [
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
-              child: AutoSizeText(
+              child: const AutoSizeText(
                 'Аккаунт',
                 style: TextStyle(
                   color: Colors.black,
@@ -43,7 +43,7 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                 children: [
                   Center(
                     child: CircleAvatar(
-                      backgroundColor: const Color(0xFFD9D9D9),
+                      backgroundColor: Color(0xFFD9D9D9),
                       radius: 60,
                       child: Image.asset(
                         'assets/images/justpeople.png',
@@ -58,15 +58,15 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                         child: InkWell(
                           onTap: () {},
                           child: Ink(
-                            padding: const EdgeInsets.all(5),
-                            decoration: const BoxDecoration(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
                                       blurRadius: 12, color: Color(0xFF000000))
                                 ]),
-                            child: const Icon(Icons.edit),
+                            child: Icon(Icons.edit),
                           ),
                         ),
                       ),
@@ -75,7 +75,7 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                 ],
               ),
             ),
-            const AutoSizeText(
+            AutoSizeText(
               '+79821347218',
               style: TextStyle(
                 color: Colors.black,
@@ -90,30 +90,27 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 12,
-                      color: Color(0x41000000)
                     )
                   ],
                 ),
                 width: size.width,
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Row(
+                    Row(
                       children: [
                         CircleAvatar(
-                          backgroundColor: Color(0xFFFF4242),
                           child: Icon(
                             Icons.info,
                             color: Colors.white,
                           ),
+                          backgroundColor: Color(0xFFFF4242),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
+                        SizedBox(width: 10,),
                         AutoSizeText(
                           'Личная информация',
                           style: TextStyle(
@@ -123,130 +120,7 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                           ),
                         )
                       ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        CircleAvatar(
-
-                          backgroundColor: const Color(0xFF9742FF),
-
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Image.asset('assets/images/benefits.png'),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const AutoSizeText(
-                          'Льготы',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'RobotoSlab',
-                          ),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: const Color(0xFFFFAD42),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Image.asset('assets/images/leader.png'),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const AutoSizeText(
-                          'Профсоюзный дилер',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'RobotoSlab',
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: const [
-                    BoxShadow(
-                        blurRadius: 12,
-                        color: Color(0x41000000)
                     )
-                  ],
-                ),
-                width: size.width,
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: const Color(0xFFEF42FF),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Image.asset('assets/images/policy.png'),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const AutoSizeText(
-                          'Политика конфиденциальности',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'RobotoSlab',
-                          ),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        CircleAvatar(
-
-                          backgroundColor: const Color(0xFF42A7FF),
-
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Image.asset('assets/images/acrimend.png'),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const AutoSizeText(
-                          'Соглашения',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'RobotoSlab',
-                          ),
-                        )
-                      ],
-                    ),
                   ],
                 ),
               ),

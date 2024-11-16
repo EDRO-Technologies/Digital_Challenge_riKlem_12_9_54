@@ -17,14 +17,14 @@ class _CustomAppBarState extends State<CustomAppBar> {
       automaticallyImplyLeading: false,
       elevation: 10,
       forceElevated: true,
-      shadowColor:    const Color(0x41000000),
+      shadowColor: Colors.black,
       backgroundColor: Colors.white,
       surfaceTintColor: Colors.white,
       leading: Padding(
         padding: const EdgeInsets.only(left: 10),
         child: Image.asset('assets/images/logo.png'),
       ),
-      title: const AutoSizeText(
+      title: AutoSizeText(
         'СурГУ',
         style: TextStyle(
           color: Colors.black,
