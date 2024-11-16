@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hahatonchikk/features/LoginScreen/View/Login_Screen.dart';
 
-void main() {
+
+Future<void> main() async {
   runApp(
     MaterialApp(
       theme: ThemeData(
