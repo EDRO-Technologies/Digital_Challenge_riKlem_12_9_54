@@ -22,7 +22,8 @@ List<Map<String, dynamic>> _mapsList = [
     "url": "assets/images/subutnic.png",
     "name": "Субботник НГДУ",
     "description":
-        "Соберите команду и примите участие в интеллектуальной игре от Профсоюза, где вы можете выиграть крутые призы!",
+        "Соберите команду и примите участие в интеллектуальной игре от Профсоюза, где вы можете выиграть крутые призы!\n\n"
+            "Где и когда?\nг.Сургут, ул. Энтузиастов 25 12.08.2024 в 14:00",
     'isCharity': true,
   }
 ];
@@ -108,19 +109,22 @@ class _InfoCardState extends State<InfoCard> {
                   ),
                 ),
                 child: Column(
+                  mainAxisSize: MainAxisSize.max,
                   children: [
-                    Flexible(
-                      child: Image.asset(
-                        widget.url,
-                      ),
+                    Image.asset(
+                      width: size.width,
+                      widget.url,
                     ),
+                    Spacer(),
                     Expanded(
+                      flex: 9,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                           vertical: 30,
                           horizontal: 20,
                         ),
                         child: Column(
+                          mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
@@ -134,7 +138,7 @@ class _InfoCardState extends State<InfoCard> {
                               ),
                             ),
                             Expanded(
-                              flex: 2,
+                              flex: 4,
                               child: AutoSizeText(
                                 widget.description,
                                 style: const TextStyle(
@@ -143,7 +147,8 @@ class _InfoCardState extends State<InfoCard> {
                                 ),
                               ),
                             ),
-                            Expanded(
+                            Spacer(),
+                            Flexible(
                               child: Material(
                                 color: Colors.transparent,
                                 child: InkWell(
@@ -193,7 +198,7 @@ class _InfoCardState extends State<InfoCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(20),
@@ -206,15 +211,17 @@ class _InfoCardState extends State<InfoCard> {
                   ),
                 ),
                 alignment: Alignment.topRight,
+                width: size.width,
+                height: 80 + 130 * (size.width / 1080),
                 child: Visibility(
                   visible: widget.isCherity,
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                     decoration: BoxDecoration(
-                      color: Color(0xFF375FC2),
+                      color: const Color(0xFF375FC2),
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: AutoSizeText(
+                    child: const AutoSizeText(
                       'Благотворительное',
                       style: TextStyle(
                         color: Colors.white,
@@ -224,8 +231,6 @@ class _InfoCardState extends State<InfoCard> {
                     ),
                   ),
                 ),
-                width: size.width,
-                height: 80 + 130 * (size.width / 1080),
               ),
               SizedBox(
                 height: 5 + 10 * (size.width / 1080),
@@ -249,7 +254,7 @@ class _InfoCardState extends State<InfoCard> {
               Container(
                 margin: EdgeInsets.symmetric(
                     horizontal: 5 + 10 * (size.width / 1080)),
-                child: AutoSizeText(
+                child: Text(
                   widget.description,
                   maxLines: 1,
                   style: const TextStyle(

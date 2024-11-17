@@ -47,6 +47,7 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                       radius: 60,
                       child: Image.asset(
                         'assets/images/justpeople.png',
+                        color: Colors.black,
                         height: 40 + 50 * (size.width / 1080),
                       ),
                     ),
@@ -75,6 +76,9 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 5 + 20 * (size.width / 1080),
+            ),
             const AutoSizeText(
               '+79821347218',
               style: TextStyle(
@@ -83,6 +87,9 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                 fontWeight: FontWeight.w500,
                 fontFamily: 'RobotoSlab',
               ),
+            ),
+            SizedBox(
+              height: 5 + 20 * (size.width / 1080),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
@@ -98,7 +105,7 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                   ],
                 ),
                 width: size.width,
-                padding: const EdgeInsets.all(10),
+                padding:  EdgeInsets.all(10 + 10 * (size.width / 1080),),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -194,7 +201,7 @@ class _SliverAccountPageState extends State<SliverAccountPage> {
                   ],
                 ),
                 width: size.width,
-                padding: const EdgeInsets.all(10),
+                padding:  EdgeInsets.all(10 + 10 * (size.width / 1080),),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

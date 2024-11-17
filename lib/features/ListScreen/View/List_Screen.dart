@@ -10,6 +10,10 @@ class ListScreen extends StatefulWidget {
 }
 
 class _ListScreenState extends State<ListScreen> {
+  int _currentIndex = 0;
+
+  List<String> name = ['Все', 'Оплатили', 'Не оплатили'];
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -23,8 +27,8 @@ class _ListScreenState extends State<ListScreen> {
                 horizontal: 20,
                 vertical: 40,
               ),
-              children: [
-                const AutoSizeText(
+              children: const [
+                AutoSizeText(
                   'Участники',
                   style: TextStyle(
                     fontSize: 25,
@@ -35,33 +39,64 @@ class _ListScreenState extends State<ListScreen> {
               ],
             ),
           ),
+          const Divider(
+            color: Color(0xFFE7E7E7),
+          ),
           Expanded(
             flex: 2,
             child: Column(
               children: [
                 Expanded(
                   child: ListView(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                     scrollDirection: Axis.horizontal,
                     children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Ink(
-                          height: MediaQuery.of(context).size.height,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 5,
+                      for (int i = 0; i < name.length; i++)
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                _currentIndex = i;
+                              });
+                            },
+                            borderRadius: BorderRadius.circular(10),
+                            child: Ink(
+                              height: MediaQuery.of(context).size.height,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: _currentIndex == i
+                                    ? Color(0xFF375FC2)
+                                    : Color(0xFFECECEC),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 15,
+                                vertical: 5,
+                              ),
+                              child: Center(
+                                child: AutoSizeText(
+                                  name[i],
+                                  style: TextStyle(
+                                    color: _currentIndex == i
+                                        ? Colors.white
+                                        : Color(0xFF949494),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                          color: const Color(0xFF375FC2),
-                          child: const Text('Все'),
-                        ),
-                      )
+                        )
                     ],
                   ),
                 ),
                 Expanded(
+                  flex: 2,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(15),
                       onTap: () {
@@ -71,7 +106,7 @@ class _ListScreenState extends State<ListScreen> {
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                        color: const Color(0xFFE7E7E7),
+                          color: const Color(0xFFE7E7E7),
                         ),
                         padding: const EdgeInsets.symmetric(
                           horizontal: 15,
@@ -91,6 +126,7 @@ class _ListScreenState extends State<ListScreen> {
                     ),
                   ),
                 ),
+                Spacer()
               ],
             ),
           )

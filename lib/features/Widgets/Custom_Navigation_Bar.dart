@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:scroll_to_hide/scroll_to_hide.dart';
 
@@ -13,7 +15,11 @@ class CustomNavigationBar extends StatefulWidget {
 final ScrollController scrollController = ScrollController();
 
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
+
   int indexNavigationBar = 0;
+
+
+
   @override
   Widget build(BuildContext context) {
     return ScrollToHide(
@@ -31,8 +37,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               BoxShadow(
                 blurRadius: 15.4,
                 spreadRadius: 1,
-                  color: Color(0x41000000)
-              )
+                color: Color(0x41000000),
+              ),
             ],
           ),
           child: BottomNavigationBar(
@@ -46,7 +52,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
             currentIndex: indexNavigationBar,
             onTap: (index) {
               setState(() {
-                 indexNavigationBar = index;
+                indexNavigationBar = index;
                 pageController.animateToPage(
                   indexNavigationBar,
                   duration: const Duration(milliseconds: 300),
@@ -58,78 +64,78 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               BottomNavigationBarItem(
                 icon: indexNavigationBar == 0
                     ? Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20, vertical: 5),
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF5E7BC3),
-                    borderRadius: BorderRadius.horizontal(
-                      right: Radius.circular(20),
-                      left: Radius.circular(20),
-                    ),
-                  ),
-                  child: Image.asset(
-                    'assets/images/home.png',
-                    width: 28,
-                    height: 28,
-                  ),
-                )
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 5),
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF5E7BC3),
+                        borderRadius: BorderRadius.horizontal(
+                          right: Radius.circular(20),
+                          left: Radius.circular(20),
+                        ),
+                      ),
+                      child: Image.asset(
+                        'assets/images/home.png',
+                        width: 28,
+                        height: 28,
+                      ),
+                    )
                     : Image.asset(
-                  'assets/images/home_outline.png',
-                  width: 28,
-                  height: 28,
-                ),
+                        'assets/images/home_outline.png',
+                        width: 28,
+                        height: 28,
+                      ),
                 label: '',
                 tooltip: 'Дом',
               ),
               BottomNavigationBarItem(
                 icon: indexNavigationBar == 1
                     ? Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20, vertical: 5),
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF5E7BC3),
-                    borderRadius: BorderRadius.horizontal(
-                      right: Radius.circular(20),
-                      left: Radius.circular(20),
-                    ),
-                  ),
-                  child: Image.asset(
-                    'assets/images/events.png',
-                    width: 28,
-                    height: 28,
-                  ),
-                )
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 5),
+                        decoration: const BoxDecoration(
+                          color: Color(0xFF5E7BC3),
+                          borderRadius: BorderRadius.horizontal(
+                            right: Radius.circular(20),
+                            left: Radius.circular(20),
+                          ),
+                        ),
+                        child: Image.asset(
+                          'assets/images/events.png',
+                          width: 28,
+                          height: 28,
+                        ),
+                      )
                     : Image.asset(
-                  'assets/images/events_outline.png',
-                  width: 28,
-                  height: 28,
-                ),
+                        'assets/images/events_outline.png',
+                        width: 28,
+                        height: 28,
+                      ),
                 label: '',
                 tooltip: 'Мероприятия',
               ),
               BottomNavigationBarItem(
                 icon: indexNavigationBar == 2
                     ? Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20, vertical: 5),
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF5E7BC3),
-                    borderRadius: BorderRadius.horizontal(
-                      right: Radius.circular(20),
-                      left: Radius.circular(20),
-                    ),
-                  ),
-                  child: Image.asset(
-                    'assets/images/justpeople.png',
-                    width: 28,
-                    height: 28,
-                  ),
-                )
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 5),
+                        decoration: const BoxDecoration(
+                          color: Color(0xFF5E7BC3),
+                          borderRadius: BorderRadius.horizontal(
+                            right: Radius.circular(20),
+                            left: Radius.circular(20),
+                          ),
+                        ),
+                        child: Image.asset(
+                          'assets/images/justpeople.png',
+                          width: 28,
+                          height: 28,
+                        ),
+                      )
                     : Image.asset(
-                  'assets/images/people_outline.png',
-                  width: 28,
-                  height: 28,
-                ),
+                        'assets/images/people_outline.png',
+                        width: 28,
+                        height: 28,
+                      ),
                 label: '',
                 tooltip: 'Аккаунт',
               ),
