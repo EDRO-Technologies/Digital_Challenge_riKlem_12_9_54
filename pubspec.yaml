@@ -42,6 +42,7 @@ dependencies:
   scroll_to_hide: ^2.1.0
   shared_preferences: any
   rive: ^0.13.17
+  fluttertoast: ^8.2.8
 
 dev_dependencies:
   flutter_test:
