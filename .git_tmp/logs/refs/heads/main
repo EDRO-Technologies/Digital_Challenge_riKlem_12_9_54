@@ -1,7 +1,0 @@
-0000000000000000000000000000000000000000 834d4bddb1fe74ca863e1c85dc33f102bb517de1 redlinegame <redlinegame10@gmail.com> 1731799803 +0300	branch: Created from HEAD
-834d4bddb1fe74ca863e1c85dc33f102bb517de1 7da6645eb4e2d751901f54314ea5ca481413955b redlinegame <redlinegame10@gmail.com> 1731812866 +0300	commit (amend): all
-7da6645eb4e2d751901f54314ea5ca481413955b f3cf5cca8f7ab3ee42c1e2e24577a6d233ea90a5 redlinegame <redlinegame10@gmail.com> 1731812889 +0300	commit: all
-f3cf5cca8f7ab3ee42c1e2e24577a6d233ea90a5 58692cdf46d152e1d8ca1ba60f49291a8e820d77 redlinegame <redlinegame10@gmail.com> 1731812935 +0300	commit: all
-58692cdf46d152e1d8ca1ba60f49291a8e820d77 4c9ff2cfa01fd0d24be0c3e965f1c57b51c35905 redlinegame <redlinegame10@gmail.com> 1731813011 +0300	rebase (finish): refs/heads/main onto 834d4bddb1fe74ca863e1c85dc33f102bb517de1
-4c9ff2cfa01fd0d24be0c3e965f1c57b51c35905 0ff42e8a180eae89b57613969a0c175da2168229 redlinegame <redlinegame10@gmail.com> 1731813325 +0300	commit (merge): Merge branch 'master' of https://github.com/EDRO-Technologies/Digital_Challenge_riKlem_12_9_54
-0ff42e8a180eae89b57613969a0c175da2168229 2caef8443fee4e304e3208736cc956229112f1e6 redlinegame <redlinegame10@gmail.com> 1731813570 +0300	commit: all
